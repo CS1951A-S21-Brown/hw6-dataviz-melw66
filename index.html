@@ -15,12 +15,97 @@
     <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
     <div class="row">
         <div class="col-lg-6">
-            <div id="graph1"></div>
-            <div id="graph2"></div><br/>
+            <div class="graph-wrapper" id="graph1-wrapper">
+                <div id="graph1"></div>
+            </div>
+            <div class="graph-wrapper">
+                <div class="controls">
+                    <label for="regions">Choose a Region:</label>
+                    <select name="regions" id="regions">
+                        <option value="global">Global</option>
+                        <option value="eu">Europe</option>
+                        <option value="jp">Japan</option>
+                        <option value="na">North America</option>
+                        <option value="other">Other Regions</option>
+                    </select>
+                    <button type="button" class="btn btn-info" id="update2">Generate Graph</button>
+                </div>
+                <div id="graph2"></div>
+            </div><br/>
         </div>
         <div class="col-lg-6">
-            <div id="graph3"></div>
+            <div class="graph-wrapper">
+                <div class="controls">
+                    <label for="genres">Choose a Genre:</label>
+                    <select name="genres" id="genres">
+                        <option value="action">Action</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="fighting">Fighting</option>
+                        <option value="misc">Misc</option>
+                        <option value="platform">Platform</option>
+                        <option value="puzzle">Puzzle</option>
+                        <option value="racing">Racing</option>
+                        <option value="rp">Role-Playing</option>
+                        <option value="shooter">Shooter</option>
+                        <option value="simulation">Simulation</option>
+                        <option value="sports">Sports</option>
+                        <option value="strategy">Strategy</option>
+                    </select>
+                    <button type="button" class="btn btn-info" id="update3">Generate Graph</button>
+                </div>
+                <div id="graph3"></div>
+            </div>
         </div>
+    </div>
+    <div>
+        <h3>Written Questions</h3>
+        <ol>
+            <li>
+                The first graph shows the top 10 video games of all time, where they were ranked based on global sales. It clearly shows the top 10 games 
+                ordered in descending order of sales. A horizontal bar chart works because the sales values could be displayed next to the bars, and the 
+                relative sales numbers can be easily compared. The second graph is a pie chart that can be toggled to be for a different region. A pie chart 
+                works because all the genres that make up sales are being shown, so comparing percentages makes sense. The slices are ordered in descending 
+                order of size, so the viewer can easily see which genre had the most sales. The third graph is a vertical bar chart showing only the top 15
+                publishers (based on global sales) for the selected genre (can be toggled). A bar chart works here because the relative heights of the bars 
+                clearly shows the relationships between the top 15 publishers for the genre, with the number one top publisher clearly being the first bar,
+                since bars are order in descending order of sales.
+            </li>
+            <br/>
+            <li>
+                D3 was very helpful because it makes creating SVGs, which are scalable without losing image quality, very easy for common data visualizations.
+                D3's the animation/transitions are also very easy to use, which makes visualizations transition smoothly between each other, allowing the viewer 
+                to have some sense of how the data is different before and after the change. D3 also essentially makes you build a lot of things up from scratch,
+                which allows for a lot of freedom and room for customization.
+            </li>
+            <br/>
+            <li>
+                D3 is very useful for creating beautiful, interactive visualizations, however it can be very time-consuming when compared to using other tools 
+                like Matplotlib or Excel for non-interative ones. So when visualizations are non-interactive and need to be made quickly, D3 would not be the 
+                best tool. D3 may also not be the best when there is an extremely large amount of data points being visualized in the browser, since having such 
+                a large amount of SVG elements will show things down by a lot. D3 may also make it tempting to use unnecessarily complicated data visualizations 
+                when a simple bar or scatter plot will communicate things most effectively to the intended audience. When visualizations should be simple, other 
+                libraries are much easier and quicker to use and get the same results.
+            </li>
+            <br/>
+            <li>
+                Users with visual and motor impairments may find the dashboard harder to use, while users without those impairments would find it accessible.
+                In the article by Amanda Miller, it is mentioned that hover overlays should be avoided when possible since assistive technologies most likely cannot
+                make use of them. The visually impaired would be unable to use the hover overlays, and the motor impaired would have a hard time trying to use them
+                as well. So for the pie chart, I would consider removing the hover option and having the information put outside the pie chart with lines going into 
+                the slices to indicate correspondence. This would also make the legend able to be removed, thus removing the reliance on color, which Miller also 
+                recommends. The slices' information can also have a ranking of relative size (for example 1 for largest slice and larger numbers for smaller slices).
+                This would help the visually impaired. The article by Doug Schepers also mentions how important alt text is and how alt text that summarizes the data
+                would help the visually impaired a lot and save their time. Therefore I would add alt text given the time. Lastly, a keyboard accessible zoom feature 
+                could be added (enlarges a simgle graph) for those who are slightly visually impaired and can't read the small font sizes.
+            </li>
+            <br/>
+            <li>
+                The biggest factor that kept me from taking the steps mentioned in the previous question was lack of time and large learning curve for D3 in general.
+                While this answer doesn't seem that great, it definitely shows the problem with how accessibility is viewed. Accessibility is often seen as something to 
+                be built later upon something that is already "completed". The large learning curve and amount of time spent using D3 sacrifices time for customizability,
+                which here translated to lack of accessibility.
+            </li>
+          </ol>
     </div>
     <!--Feel free to add more JavaScript files as needed-->
     <script type="text/javascript" src="main.js"></script>

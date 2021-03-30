@@ -1,3 +1,9 @@
+body {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 100px;
+}
+
 .header {
     padding-bottom: 20px;
     margin-bottom: 20px;
@@ -10,3 +16,17 @@
 }
 
 /* Include any custom CSS styling here! */
+
+.graph-wrapper {
+    background-color: white;
+    box-shadow: 0px 0px 20px #bebebe;
+    border-radius: 15px;
+}
+
+.controls {
+    padding: 20px 0px 0px 30px;
+}
+
+#graph1-wrapper {
+    margin-bottom: 20px;
+}
